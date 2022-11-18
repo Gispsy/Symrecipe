@@ -53,7 +53,6 @@ class __TwigTemplate_6251ad532609eb7fa97b96c29b9f7320 extends Template
             <span class=\"visually-hidden\">(current)</span>
           </a>
         </li>
-    
       </ul>
     </div>
   </div>
@@ -91,10 +90,9 @@ class __TwigTemplate_6251ad532609eb7fa97b96c29b9f7320 extends Template
             <span class=\"visually-hidden\">(current)</span>
           </a>
         </li>
-    
       </ul>
     </div>
   </div>
-</nav>", "partials/_header.html.twig", "/home/stag9/Bureau/MS_DIW/BACK/SERVEUR/PHP/symfony/TestSymfony/templates/partials/_header.html.twig");
+</nav>", "partials/_header.html.twig", "/home/stag9/Bureau/SymRecipe/templates/partials/_header.html.twig");
     }
 }
