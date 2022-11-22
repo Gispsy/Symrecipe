@@ -18,4 +18,6 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'home.index' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
     'app_ingredient' => [[], ['_controller' => 'App\\Controller\\IngredientController::index'], [], [['text', '/ingredient']], [], [], []],
+    'ingredient.new' => [[], ['_controller' => 'App\\Controller\\IngredientController::new'], [], [['text', '/ingredient/nouveau']], [], [], []],
+    'ingredient.edit' => [['id'], ['_controller' => 'App\\Controller\\IngredientController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ingredient/edition']], [], [], []],
 ];
