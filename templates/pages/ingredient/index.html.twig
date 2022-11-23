@@ -30,15 +30,23 @@
         <th scope="col">Nom</th>
         <th scope="col">Prix </th>
         <th scope="col">Date de creation</th>
+        <th scope="col">Edition</th>
+        <th scope="col">Suppresion</th>
     </tr>
 </thead>
 <tbody>
-        {% for ingredients in ingredients %}
+        {% for ingredient in ingredients %}
             <tr class="table-primary">
-            <th scope="row">{{ingredients.id}}</th>
-                <td>{{ingredients.name}}</td>
-                <td>{{ingredients.price}}</td>
-                <td>{{ingredients.createdAt|date("d/m/Y")}}</td>
+            <th scope="row">{{ingredient.id}}</th>
+                <td>{{ingredient.name}}</td>
+                <td>{{ingredient.price}}</td>
+                <td>{{ingredient.createdAt|date("d/m/Y")}}</td>
+                <td>
+                    <a href="{{path('ingredient.edit', {id: ingredient.id})}}" class="btn btn-info">Modifier</a>
+                </td>
+                <td>
+                    <a href="{{path('ingredient.delete', {id: ingredient.id})}}" class="al btn btn-warning">Supprimer</a>
+                </td>
             </tr>
         {% endfor %}
     </tbody>
@@ -51,4 +59,8 @@
         <h4>Il n'y a pas d'ingrédients</h4>
     {% endif %}
 </div>
+
+<script src="js/alert.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 {% endblock %}

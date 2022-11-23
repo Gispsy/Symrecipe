@@ -28,14 +28,14 @@ class IngredientController extends AbstractController
     public function index(IngredientRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
 
-        $ingredients = $paginator->paginate(
+        $ingredient = $paginator->paginate(
             $repository->findAll(),
             $request->query->getInt('page', 1),
             10
         );
 
         return $this->render('pages/ingredient/index.html.twig', [
-            'ingredients' => $ingredients
+            'ingredients' => $ingredient
         ]);
     }
 
@@ -105,4 +105,19 @@ class IngredientController extends AbstractController
 
         ]);
     }
+
+    #[Route('ingredient/suppression/{id}', 'ingredient.delete', methods: ['GET'])]
+    public function delete(EntityManagerInterface $manager, Ingredient $ingredient) : Response
+    {
+
+        $manager-> remove($ingredient);
+        $manager->flush();
+
+        $this->addFlash(
+            'success',
+            'Votre ingredient a été supprimé avec succès'
+        );
+
+        return $this->redirectToRoute('app_ingredient'); 
+    }   
 }

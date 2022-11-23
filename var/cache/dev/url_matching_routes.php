@@ -35,7 +35,10 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/ingredient/edition/([^/]++)(*:197)'
+                .'|/ingredient/(?'
+                    .'|edition/([^/]++)(*:200)'
+                    .'|suppression/([^/]++)(*:228)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -46,8 +49,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        197 => [
-            [['_route' => 'ingredient.edit', '_controller' => 'App\\Controller\\IngredientController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null],
+        200 => [[['_route' => 'ingredient.edit', '_controller' => 'App\\Controller\\IngredientController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        228 => [
+            [['_route' => 'ingredient.delete', '_controller' => 'App\\Controller\\IngredientController::delete'], ['id'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
