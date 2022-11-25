@@ -24,7 +24,7 @@ class IngredientController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    #[Route('/ingredient', name: 'app_ingredient', methods: ['GET'])]
+    #[Route('/ingredient', name: 'ingredient.index', methods: ['GET'])]
     public function index(IngredientRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
 
@@ -65,10 +65,10 @@ class IngredientController extends AbstractController
 
             $this->addFlash(
                 'success',
-                'Votre ingredient a été créé avec succès'
+                $ingredient->getname().' a été créé avec succès'
             );
 
-            return $this->redirectToRoute('app_ingredient');
+            return $this->redirectToRoute('ingredient.index');
         }
 
         return $this->render('pages/ingredient/new.html.twig', [
@@ -94,10 +94,10 @@ class IngredientController extends AbstractController
 
             $this->addFlash(
                 'success',
-                'Votre ingredient a été modifié avec succès'
+                $ingredient->getname().' a été modifié avec succès'
             );
 
-            return $this->redirectToRoute('app_ingredient');
+            return $this->redirectToRoute('ingredient.index');
         }
 
         return $this->render('pages/ingredient/edit.html.twig', [
@@ -115,9 +115,9 @@ class IngredientController extends AbstractController
 
         $this->addFlash(
             'success',
-            'Votre ingredient a été supprimé avec succès'
+            $ingredient->getname().'a été supprimé avec succès'
         );
 
-        return $this->redirectToRoute('app_ingredient'); 
+        return $this->redirectToRoute('ingredient.index'); 
     }   
 }

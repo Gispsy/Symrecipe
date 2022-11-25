@@ -1,27 +1,18 @@
-// Script JS de confirmation pour la suppression d'un ingredient
+//Permet de recuperer le nom de la balise et de pouvoir lui dire quoi faire 
 
-const confirmation_supprimer = document.querySelectorAll(".al");
+const al = document.querySelectorAll('.al')
 
-function confirmDelete(e)
-{
-    if(!confirm('Voulez-vous supprimer cet ingrédient ?')) 
-    {
-        e.preventDefault()
-    
-}
+//Permet de selectionner n'importe qu'elle buton supprimer
+al.forEach(element => {
+    element.addEventListener("click", loadAlert)
+  });
 
-confirmation_supprimer.forEach(element => {
-
-    element.addEventListener("click", confirmDelete)
-    })
-}
-
-const al = document.querySelector('.al')
-// const Swal = require('sweetalert2')
-al.addEventListener("click", loadAlert)
-
+//fonction qui permet d'afficher une alerte propre avec deux validation pour la supression
 function loadAlert(e) {
     e.preventDefault();
+
+
+    var url = e.currentTarget.getAttribute('href')
     
     Swal.fire({
         title: 'Tu es sur ?',
@@ -31,13 +22,15 @@ function loadAlert(e) {
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Oui, supprime le !'
-      }).then((result) => {
+    }).then((result) => {
         if (result.isConfirmed) {
-          Swal.fire(
-            'Supprimer!',
-            "L'ingredient a était supprimer",
-            'success'
-          )
+            Swal.fire(
+                'Supprimer!',
+                "L'ingredient a était supprimer",
+                'success',
+            ).then((result) =>{
+                window.location.href = url
+            })
         }
-      })
+    })
 }

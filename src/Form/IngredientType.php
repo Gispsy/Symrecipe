@@ -46,6 +46,13 @@ class IngredientType extends AbstractType
                     new Assert\LessThan(200)
                 ]
             ])
+            /*->add('modif', SubmitType::class, [
+                'attr' =>[
+                    'class' => 'btn btn-warning mt-4'
+                ],
+                'label' => 'Modifier mon ingrédient'
+
+            ])*/
             ->add('submit', SubmitType::class, [
                 'attr' =>[
                     'class' => 'btn btn-primary mt-4'

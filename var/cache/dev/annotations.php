@@ -62,6 +62,12 @@ return [[
 '[C]App%5CController%5CIngredientController' => 1,
 'App%5CController%5CIngredientController%23index' => 0,
 '[C]App%5CController%5CIngredientController%23index' => 1,
+'App%5CController%5CIngredientController%23new' => 0,
+'[C]App%5CController%5CIngredientController%23new' => 1,
+'App%5CController%5CIngredientController%23edit' => 0,
+'[C]App%5CController%5CIngredientController%23edit' => 1,
+'App%5CController%5CIngredientController%23delete' => 0,
+'[C]App%5CController%5CIngredientController%23delete' => 1,
 'App%5CEntity%5CIngredient' => 0,
 '[C]App%5CEntity%5CIngredient' => 1,
 'App%5CEntity%5CIngredient%23__construct' => 0,
@@ -638,6 +644,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1669043029,
+1 => 1669283434,
 
 ]];
