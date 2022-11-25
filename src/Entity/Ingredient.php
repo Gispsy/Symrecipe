@@ -22,8 +22,8 @@ class Ingredient
     private ?string $name = null;
 
     #[ORM\Column]
-    #[Assert\Positive()]
     #[Assert\NotNull()]
+    #[Assert\Positive()]
     #[Assert\LessThan(200)]
     private ?float $price = null;
 
