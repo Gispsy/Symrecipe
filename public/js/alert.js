@@ -12,7 +12,7 @@ function loadAlert(e) {
     e.preventDefault();
 
 
-    var url = e.currentTarget.getAttribute('href')
+    let url = e.currentTarget.getAttribute('href')
     
     Swal.fire({
         title: 'Tu es sur ?',

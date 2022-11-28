@@ -26,12 +26,12 @@
         <div class = 'form-groupe'>
             {{ form_row(form.submit, {
                 'label': 'Modifier mon ingrédient',
-                'label_attr' : {'class': 'modif'}
+                'attr' : {'class': 'md btn btn-primary mt-4'}
                 }) }}
         </div>
 
 {{ form_end(form) }}
     </div>
-<script src="//js/modif.js"></script>
+<script src="/js/modif.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 {% endblock %}

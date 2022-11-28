@@ -92,12 +92,13 @@ class IngredientController extends AbstractController
             $manager->persist($ingredient);
             $manager->flush();
 
-            $this->addFlash(
+            $this->addFlash(                                             //Modification avec succes 
                 'success',
                 $ingredient->getname().' a été modifié avec succès'
             );
 
             return $this->redirectToRoute('ingredient.index');
+
         }
 
         return $this->render('pages/ingredient/edit.html.twig', [
@@ -113,9 +114,9 @@ class IngredientController extends AbstractController
         $manager-> remove($ingredient);
         $manager->flush();
 
-        $this->addFlash(
+        $this->addFlash(                                             //Flash qui permet de mettre un message pour dire que ces un succés 
             'success',
-            $ingredient->getname().'a été supprimé avec succès'
+            $ingredient->getname().' a été supprimé avec succès'
         );
 
         return $this->redirectToRoute('ingredient.index'); 

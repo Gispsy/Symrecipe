@@ -24,9 +24,13 @@
         </div>
 
         <div class = 'form-groupe'>
-            {{ form_row(form.submit) }}
-        </div>
+            {{ form_row(form.submit, {
+                'label': 'Créer mon ingrédient',
+                'attr' : {'class': 'aj btn btn-primary mt-4'}
+                }) }}
 
 {{ form_end(form) }}
     </div>
+<script src="/js/ajout.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 {% endblock %}
