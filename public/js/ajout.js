@@ -18,8 +18,8 @@ function loadAjout(e) {
 e.preventDefault();
 
     Swal.fire(
-        'Modifier!',
-        "L'ingredient a était modifier",
+        'Créer!',
+        "L'ingredient a était créer",
         'success',
 
     ).then((result) =>{
