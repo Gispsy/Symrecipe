@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SymRecipe - Mes recettes
+{% endblock %}
+
+{% block body %}
+    <div class = "container mt-4 ">
+        {% if not recipes.items is same as([]) %}
+            <h1>Mes recettes</h1>
+
+        <div class="count mt-4">
+            {{ recipes.getTotalItemCount }}
+            recettes
+        </div>
+
+        <table class="table table-hover mt-4">
+  <thead>
+    <tr>
+        <th scope="col">Numéro</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prix </th>
+        <th scope="col">Difficulter </th>
+        <th scope="col">Date de creation</th>
+        <th scope="col">Edition</th>
+        <th scope="col">Suppresion</th>
+    </tr>
+</thead>
+<tbody>
+        {% for recipe in recipes %}
+            <tr class="table-primary">
+            <th scope="row">{{recipe.id}}</th>
+                <td>{{recipe.name}}</td>
+                <td>{{recipe.price}} {{ (recipe.price is same as(null)) ? 'Non renseigné' }}</td>
+                <td>{{recipe.difficulty}} {{ (recipe.difficulty is same as(null)) ? 'Non renseigné' }}</td>
+                <td>{{recipe.createdAt|date("d/m/Y")}}</td>
+                <td>
+                    Todo
+                </td>
+                <td>
+                    Todo
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+    <div class="navigation d-flex justify-content-center mt-4">
+        {{ knp_pagination_render(recipes) }}
+    </div>
+    {% else %}
+        <h4>Il n'y a pas recettes</h4>
+    {% endif %}
+</div>
+
+<script src="js/alert.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{% endblock %}
